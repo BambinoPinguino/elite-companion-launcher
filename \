@@ -1,0 +1,12 @@
+use std::process::Command;
+
+fn main() {
+    let mut list_dir = Command::new("sh")
+        .arg("-c")
+        .arg("ls")
+        .arg("-lah")
+        .output()
+        .expect("failed to execute process");
+
+    list_dir();
+}
